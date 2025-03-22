@@ -1204,7 +1204,7 @@ async getOrCreateDocumentType(name) {
       //   }
       // }
       
-      console.log('[DEBUG] Final update data:', updateData);
+      console.log('[DEBUG] Final update data:\n' + JSON.stringify(updateData, null, 2));
       await this.client.patch(`/documents/${documentId}/`, updateData);
       console.log(`[SUCCESS] Updated document ${documentId} with:`, updateData);
       return await this.getDocument(documentId);
